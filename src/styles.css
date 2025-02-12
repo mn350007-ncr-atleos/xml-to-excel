@@ -1,7 +1,33 @@
-body {
-    background-color: #FFFFFF;
-    color: #070f25;
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
     font-family: Verdana, sans-serif;
+    background: url('/NCRAtleos_TeamsBkg_1-4K.PNG') no-repeat center fixed; /* Background image */
+    background-size:cover; /* Cover the entire page */
+    color: #070f25;
+  }
+  
+  .app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .container {
+    flex-grow: 1; /* Allow the container to grow and take available space */
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Maximum width for better readability */
+    margin: 0 auto; /* Center content horizontally */
+    padding: 20px;
+    text-align: center;
+    background-color: #D1E0D7; /* Solid background color */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute; /* Ensure positioning context */
+    left: 50%; /* Move to the center */
+    transform: translateX(-50%); /* Center the container */
   }
   
   h1 {
@@ -28,13 +54,16 @@ body {
   input[type="file"] {
     margin-top: 20px;
   }
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
   
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-    background-color: #D1E0D7;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    h1 {
+      font-size: 1.5em;
+    }
+  
+    button {
+      padding: 8px 16px;
+    }
   }

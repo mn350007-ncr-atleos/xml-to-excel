@@ -1,0 +1,35 @@
+footer {
+  width: 100%; /* Full width */
+  background-color: rgba(29, 29, 29, 0.8);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto; /* Push footer to the bottom */
+  position: absolute; /* Fix footer at the bottom */
+  bottom: 0;
+  left: 0;
+}
+  
+  .social-links {
+    margin-bottom: 10px;
+  }
+  
+  .social-links a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .social-links a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    footer {
+      padding: 5px 0;
+    }
+  
+    .social-links a {
+      margin: 0 5px;
+    }
+  }

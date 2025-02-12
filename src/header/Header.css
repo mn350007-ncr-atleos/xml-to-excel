@@ -1,0 +1,20 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the navbar */
+    padding: 0; /* Remove padding */
+    background-color: #FFFFFF; /* Solid background color */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+    }
+  }

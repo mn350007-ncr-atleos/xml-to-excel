@@ -3,9 +3,10 @@ const multer = require("multer");
 const xml2js = require("xml2js");
 const ExcelJS = require("exceljs");
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // Omogućite CORS
 app.use(cors());
@@ -54,8 +55,11 @@ app.post("/convert", upload.single("file"), async (req, res) => {
     // Sačuvaj Excel fajl u memoriji
     const buffer = await workbook.xlsx.writeBuffer();
 
-    // Pošalji Excel fajl kao odgovor
-    res.setHeader("Content-Disposition", "attachment; filename=output.xlsx");
+    // Izvucite ime fajla bez ekstenzije
+    const originalFileName = path.parse(req.file.originalname).name;
+
+    // Pošalji Excel fajl kao odgovor sa originalnim imenom
+    res.setHeader("Content-Disposition", `attachment; filename=${originalFileName}.xlsx`);
     res.setHeader("Content-Type", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
     res.send(buffer);
   } catch (error) {
