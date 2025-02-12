@@ -21,7 +21,7 @@ function App() {
     const formData = new FormData();
     formData.append("file", file);
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/convert`, formData, {
+      const response = await axios.post(`${import.meta.env.VERCEL_API_URL}/convert`, formData, {
         responseType: "blob",
       });
       const url = window.URL.createObjectURL(new Blob([response.data]));
